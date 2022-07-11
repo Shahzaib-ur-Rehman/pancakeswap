@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import Box from "@mui/material/Box";
 import Grid from "@mui/material/Grid";
 import styled from "styled-components";
-
+import mail from "../content/images/bun.webp";
 const ContentWrapper = styled.div`
   display: flex;
   flex-direction: column;
@@ -26,6 +26,9 @@ const Heading = styled.h2`
   font-size: 32px;
   font-weight: 600;
   line-height: 1.1;
+  @media (max-width: 576px) {
+    font-size: 21px;
+  }
 `;
 const Discription = styled.span`
   color: white;
@@ -63,7 +66,40 @@ const StyledButton = styled.button`
     opacity: 0.65;
   }
 `;
-
+const Wrapper = styled.div`
+  position: relative;
+  > img {
+    @media (max-width: 576px) {
+      height: 300px;
+      width: 300px;
+    }
+  }
+  @keyframes bounce {
+    0%,
+    100% {
+      transform: translate(0, 0);
+    }
+    10%,
+    30%,
+    50%,
+    70%,
+    90% {
+      transform: translate(-8px, -10px);
+    }
+    20%,
+    40%,
+    60%,
+    80%,
+    100% {
+      transform: translate(8px, 10px);
+    }
+  }
+`;
+const Img = styled.img`
+  height: 360px;
+  width: 370px;
+  animation: bounce 16s ease-in-out infinite;
+`;
 export default function ConnectWallet() {
   return (
     <Box
@@ -76,7 +112,9 @@ export default function ConnectWallet() {
     >
       <Grid lg={12} container>
         <Grid lg={3} md={6} sm={12} xs={12}>
-          Section 1
+          <Wrapper>
+            <Img src={mail} alt="" />
+          </Wrapper>
         </Grid>
         <Grid lg={6} md={6} sm={12} xs={12}>
           <ContentWrapper>
@@ -90,7 +128,9 @@ export default function ConnectWallet() {
           </ContentWrapper>
         </Grid>
         <Grid lg={3} md={6} sm={12} xs={12}>
-          Section 1
+          <Wrapper>
+            <Img src={mail} alt="" />
+          </Wrapper>
         </Grid>
       </Grid>
     </Box>

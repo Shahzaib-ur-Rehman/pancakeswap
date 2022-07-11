@@ -6,6 +6,8 @@ import styled from "styled-components";
 import bitcoin from "../content/images/bitcoin.webp";
 import bunny from "../content/images/bunny.webp";
 import yellow from "../content/images/yellow.webp";
+import useMediaQuery from "@mui/material/useMediaQuery";
+
 const Heading2 = styled.h2`
   font-size: 22px;
 `;
@@ -31,6 +33,13 @@ const ContentWrapper = styled.div`
 `;
 const Wrapper = styled.div`
   position: relative;
+  > img {
+    @media (max-width: 576px) {
+      height: 250px;
+      width: 250px;
+    }
+  }
+
   &:before {
     content: "";
     position: absolute;
@@ -42,6 +51,11 @@ const Wrapper = styled.div`
     display: inline-block;
     animation: bounce 16.5s ease-in-out infinite;
     z-index: 2;
+    @media (max-width: 576px) {
+      background-size: 280px 300px;
+      height: 250px;
+      width: 261px;
+    }
   }
   &:after {
     content: "";
@@ -55,6 +69,11 @@ const Wrapper = styled.div`
     display: inline-block;
     z-index: -1;
     animation: bounce 16.8s ease-in-out infinite;
+    @media (max-width: 576px) {
+      background-size: 250px 300px;
+      height: 280px;
+      width: 260px;
+    }
   }
   @keyframes bounce {
     0%,
@@ -85,9 +104,17 @@ const Img = styled.img`
 `;
 
 export default function Trade() {
+  const matches = useMediaQuery("(max-width:576px)");
   return (
     <Box component={"section"}>
-      <Grid item lg={10} container style={{ margin: "auto" }}>
+      <Grid
+        item
+        lg={10}
+        container
+        style={{ margin: "auto" }}
+        display={matches ? "flex" : "flex"}
+        flexDirection={matches ? "column-reverse" : "row"}
+      >
         <Grid lg={6}>
           <ContentWrapper>
             <Heading2>

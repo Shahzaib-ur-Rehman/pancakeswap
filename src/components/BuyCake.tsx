@@ -4,7 +4,7 @@ import Box from "@mui/material/Box";
 import Grid from "@mui/material/Grid";
 import styled from "styled-components";
 import mail from "../content/images/mail.webp";
-import graph from "../content/images/graph.webp";
+import graph from "../content/images/bun.webp";
 import circle from "../content/images/circle.webp";
 const Heading2 = styled.h2`
   font-size: 22px;
@@ -30,6 +30,12 @@ const ContentWrapper = styled.div`
 `;
 const Wrapper = styled.div`
   position: relative;
+  > img {
+    @media (max-width: 576px) {
+      height: 300px;
+      width: 300px;
+    }
+  }
   &:before {
     content: "";
     position: absolute;
@@ -41,6 +47,10 @@ const Wrapper = styled.div`
     display: inline-block;
     animation: bounce 16.5s ease-in-out infinite;
     z-index: 2;
+    @media (max-width: 576px) {
+      height: 250px;
+      width: 261px;
+    }
   }
   &:after {
     content: "";
@@ -54,6 +64,11 @@ const Wrapper = styled.div`
     display: inline-block;
     z-index: -1;
     animation: bounce 16.8s ease-in-out infinite;
+    @media (max-width: 576px) {
+      background-size: 250px 300px;
+      height: 280px;
+      width: 260px;
+    }
   }
   @keyframes bounce {
     0%,

@@ -6,6 +6,7 @@ import styled from "styled-components";
 import mail from "../content/images/mail.webp";
 import graph from "../content/images/graph.webp";
 import circle from "../content/images/circle.webp";
+import useMediaQuery from "@mui/material/useMediaQuery";
 const Heading2 = styled.h2`
   font-size: 22px;
 `;
@@ -31,6 +32,12 @@ const ContentWrapper = styled.div`
 `;
 const Wrapper = styled.div`
   position: relative;
+  > img {
+    @media (max-width: 576px) {
+      height: 300px;
+      width: 300px;
+    }
+  }
   &:before {
     content: "";
     position: absolute;
@@ -42,6 +49,10 @@ const Wrapper = styled.div`
     display: inline-block;
     animation: bounce 16.5s ease-in-out infinite;
     z-index: 2;
+    @media (max-width: 576px) {
+      height: 250px;
+      width: 261px;
+    }
   }
   &:after {
     content: "";
@@ -55,6 +66,11 @@ const Wrapper = styled.div`
     display: inline-block;
     z-index: -1;
     animation: bounce 16.8s ease-in-out infinite;
+    @media (max-width: 576px) {
+      background-size: 250px 300px;
+      height: 280px;
+      width: 260px;
+    }
   }
   @keyframes bounce {
     0%,
@@ -89,6 +105,9 @@ const HeadingWrapSlider = styled.div`
   align-items: center;
   gap: 0 8px;
   margin-bottom: 20px;
+  @media (max-width: 576px) {
+    padding: 10px 20px;
+  }
   > h3 {
     font-size: 16px;
     @media (min-width: 768px) {
@@ -128,8 +147,15 @@ const CardSpanElem = styled.span`
   display: block;
 `;
 export default function EarnPassiveEncome() {
+  const matches = useMediaQuery("(max-width:576px)");
   return (
-    <Box component={"section"}>
+    <Box
+      component={"section"}
+      style={{
+        background:
+          "linear-gradient(111.68deg, rgb(242, 236, 242) 0%, rgb(232, 242, 246) 100%)",
+      }}
+    >
       <Grid item lg={10} container style={{ margin: "auto" }}>
         <Grid lg={6}>
           <Wrapper>
@@ -174,25 +200,21 @@ export default function EarnPassiveEncome() {
         container
         style={{ display: "flex", justifyContent: "center", margin: "auto" }}
       >
-        <Grid lg={2}>
+        <Grid lg={2} md={4} sm={6} xs={12}>
           <SmallCardWrapper>
-            <SmallCard style={{ paddingLeft: "0px", borderLeft: "0px" }}>
+            <SmallCard
+              style={{
+                paddingLeft: `${matches ? "" : "0px"}`,
+                borderLeft: `${matches ? "" : "0px"}`,
+              }}
+            >
               <h6>Stake Cake</h6>
               <p>UP TO 86.529%</p>
               <CardSpanElem>APY</CardSpanElem>
             </SmallCard>
           </SmallCardWrapper>
         </Grid>
-        <Grid lg={2}>
-          <SmallCardWrapper>
-            <SmallCard>
-              <h6>Stake Cake</h6>
-              <p>UP TO 86.529%</p>
-              <CardSpanElem>APY</CardSpanElem>
-            </SmallCard>
-          </SmallCardWrapper>
-        </Grid>
-        <Grid lg={2}>
+        <Grid lg={2} md={4} sm={6} xs={12}>
           <SmallCardWrapper>
             <SmallCard>
               <h6>Stake Cake</h6>
@@ -201,7 +223,7 @@ export default function EarnPassiveEncome() {
             </SmallCard>
           </SmallCardWrapper>
         </Grid>
-        <Grid lg={2}>
+        <Grid lg={2} md={4} sm={6} xs={12}>
           <SmallCardWrapper>
             <SmallCard>
               <h6>Stake Cake</h6>
@@ -210,7 +232,16 @@ export default function EarnPassiveEncome() {
             </SmallCard>
           </SmallCardWrapper>
         </Grid>
-        <Grid lg={2}>
+        <Grid lg={2} md={4} sm={6} xs={12}>
+          <SmallCardWrapper>
+            <SmallCard>
+              <h6>Stake Cake</h6>
+              <p>UP TO 86.529%</p>
+              <CardSpanElem>APY</CardSpanElem>
+            </SmallCard>
+          </SmallCardWrapper>
+        </Grid>
+        <Grid lg={2} md={4} sm={6} xs={12}>
           <SmallCardWrapper>
             <SmallCard>
               <h6>Stake Cake</h6>
