@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import Box from "@mui/material/Box";
+// import Box from "@mui/material/Box";
 import Grid from "@mui/material/Grid";
 import styled from "styled-components";
 import bitcoin from "../content/images/bitcoin.webp";
@@ -8,24 +8,53 @@ import bunny from "../content/images/bunny.webp";
 import yellow from "../content/images/yellow.webp";
 import useMediaQuery from "@mui/material/useMediaQuery";
 
+
+
+const Box = styled.section`
+ @media(min-width:992px){
+  padding: 40px 0;
+  
+ }
+`
 const Heading2 = styled.h2`
   font-size: 22px;
+  @media(min-width: 768px){
+    font-size: 30px;
+  }
+  @media(min-width: 992px){
+    font-size: 40px;
+    font-weight: 600;
+    line-height: 1.1;
+    margin-bottom: 24px;
+  }
 `;
 
 const Description = styled.p`
-  font-size: 18px;
-  font-weight: 600;
+color: rgb(122, 110, 170);
+font-weight: 400;
+line-height: 1.5;
+margin-bottom: 24px;
+font-size: 14px;
+  @media(min-width: 576px){
+    
+    font-size: 16px;
+  }
+  @media(min-width: 1400px){
+    
+    font-size: 18px;
+  }
 `;
 
 const ContentWrapper = styled.div`
   color: rgb(40, 13, 95);
-  text-align: center;
+  margin-top: 30px;
+  padding: 0 15px;
   @media (min-width: 576px) {
-    padding: 10px 0px;
+    padding: 15px;
   }
   @media (min-width: 768px) {
     font-size: 40px;
-    padding: 130px 110px;
+    // padding: 130px 110px;
   }
   @media (min-width: 1400px) {
     padding: 130px 110px;
@@ -105,8 +134,10 @@ const Img = styled.img`
 
 export default function Trade() {
   const matches = useMediaQuery("(max-width:576px)");
+  const min_width992 = useMediaQuery("(min-width:992px)");
+
   return (
-    <Box component={"section"}>
+    <Box>
       <Grid
         item
         lg={10}
@@ -115,10 +146,12 @@ export default function Trade() {
         display={matches ? "flex" : "flex"}
         flexDirection={matches ? "column-reverse" : "row"}
       >
-        <Grid lg={6}>
+        <Grid lg={6}  
+        display={min_width992 ? "flex" : ""}
+        alignItems={min_width992 ? "center" : ""}>
           <ContentWrapper>
             <Heading2>
-              <span style={{ color: "rgb(118, 69, 217)", fontSize: "28px" }}>
+              <span style={{ color: "rgb(118, 69, 217)" }}>
                 Trade{" "}
               </span>
               anything. No registration, no hassle.

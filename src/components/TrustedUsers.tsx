@@ -89,10 +89,22 @@ const SectionWrapper = styled.section`
   background: linear-gradient(rgb(255, 255, 255) 22%, rgb(215, 202, 236) 100%);
   position: relative;
   text-align: center;
-  > h2,
+  @media(min-width: 992px){
+    padding: 4rem 0;
+  }
+  > h2 {
+    font-size: 20px;
+    text-align: left;
+
+  }
   h5 {
+    margin-top: 10px;
     color: rgb(40, 13, 95);
     font-weight: 600;
+    @media (min-width: 992px){
+      font-size: 16px;
+    margin-bottom: 32px;
+    }
   }
 `;
 const SectionHeading = styled.div`
@@ -100,18 +112,35 @@ const SectionHeading = styled.div`
   margin: auto;
   text-align: center;
   > h2 {
-    font-size: 32px;
+    font-size: 20px;
+    color: rgb(40, 13, 95);
+    font-weight: 600;
+  }
+  @media(min-width:992px){
+    >h2{
+      font-size: 32px;
+      line-height: 1.1;
+    }
   }
 `;
 
 const DescriptionWrapper = styled.div`
   margin-top: 10px;
+  max-width: 500px;
+  margin: auto;
   > p {
     color: rgb(122, 110, 170);
     font-weight: 400;
     line-height: 1.5;
     text-align: center;
     font-size: 14px;
+    @media (min-width: 576px){
+      font-size: 16px;
+    }
+    @media(min-width: 1400px){
+    
+      font-size: 18px;
+    }
   }
 `;
 
@@ -122,7 +151,22 @@ const CardDiv = styled.div`
   box-shadow: 2px 1px 14px -2px rgba(0, 0, 0, 0.68);
   -webkit-box-shadow: 2px 1px 14px -2px rgba(0, 0, 0, 0.68);
   -moz-box-shadow: 2px 1px 14px -2px rgba(0, 0, 0, 0.68);
-`;
+  text-align:left;
+  > h2{
+    font-size:28px;
+    font-weight: 600;
+    @media(min-width: 992px){
+      margin-top: 15px;
+      margin-bottom: 15px;
+      font-size: 40px;
+    font-weight: 600;
+    line-height: 1.1;
+    margin-bottom: 24px;
+    }
+  }
+
+`
+;
 const ImgWrap = styled.div`
   text-align: end;
 `;

@@ -11,12 +11,24 @@ const Heading2 = styled.h2`
 `;
 
 const Description = styled.p`
+color: rgb(122,110,170);
+font-weight: 400;
+line-height: 1.5;
+margin-bottom: 24px;
+font-size: 14px;
+@media(min-width:576px){
+  font-size: 16px;
+
+}
+@media(min-width:1400px){
   font-size: 18px;
-  font-weight: 600;
+
+}
 `;
 
 const ContentWrapper = styled.div`
   color: rgb(40, 13, 95);
+  padding: 30px 15px;
   @media (min-width: 576px) {
     padding: 10px 0px;
   }
@@ -125,6 +137,9 @@ const SmallCard = styled.div`
     font-weight: 600;
     line-height: 1.1;
     font-size: 16px;
+    @media(min-width:992px){
+    font-size: 21px;
+    }
   }
   > h6 {
     color: rgb(122, 110, 170);
@@ -132,6 +147,14 @@ const SmallCard = styled.div`
     line-height: 1.5;
     margin-bottom: 10px;
     font-size: 12px;
+    @media(min-width: 576px){
+      font-size: 14px;
+
+    }
+    @media(min-width: 992px){
+      font-size: 16px;
+
+    }
   }
 `;
 const CardSpanElem = styled.span`
@@ -148,7 +171,7 @@ export default function BuyCake() {
         <Grid lg={6}>
           <ContentWrapper>
             <Heading2>
-              <span style={{ color: "rgb(118, 69, 217)", fontSize: "28px" }}>
+              <span style={{ color: "rgb(118, 69, 217)" }}>
                 CAKE{" "}
               </span>
               makes our world go round.
@@ -172,11 +195,11 @@ export default function BuyCake() {
         sm={12}
         xs={12}
         container
-        style={{ display: "flex", justifyContent: "center", margin: "auto" }}
+        style={{ display: "flex", justifyContent: "space-between", margin: "auto", padding: " 0 15px" }}
       >
         <Grid lg={4}>
           <SmallCardWrapper>
-            <SmallCard style={{ paddingLeft: "0px", borderLeft: "0px" }}>
+            <SmallCard >
               <h6>Circulating Supply</h6>
               <p>149,992,800</p>
             </SmallCard>
@@ -192,7 +215,7 @@ export default function BuyCake() {
         </Grid>
         <Grid lg={4}>
           <SmallCardWrapper>
-            <SmallCard>
+            <SmallCard >
               <h6>Max Supply</h6>
               <p>750,000,000</p>
             </SmallCard>
@@ -200,7 +223,7 @@ export default function BuyCake() {
         </Grid>
         <Grid lg={4}>
           <SmallCardWrapper>
-            <SmallCard style={{ paddingLeft: "0px", borderLeft: "0px" }}>
+            <SmallCard >
               <h6>Market cap</h6>
               <p>$460 million</p>
             </SmallCard>
@@ -208,7 +231,7 @@ export default function BuyCake() {
         </Grid>
         <Grid lg={4}>
           <SmallCardWrapper>
-            <SmallCard>
+            <SmallCard >
               <h6>Burned to date</h6>
               <p>508,904,887</p>
             </SmallCard>

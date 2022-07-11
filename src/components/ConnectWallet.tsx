@@ -72,6 +72,7 @@ const Wrapper = styled.div`
     @media (max-width: 576px) {
       height: 300px;
       width: 300px;
+      display: none;
     }
   }
   @keyframes bounce {
