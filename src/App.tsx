@@ -7,6 +7,7 @@ import AddLiquidity from "./components/AddLiquidity";
 import Swap from "./components/Swap";
 import Home from "./components/Home";
 import Header from "./components/Header";
+import Footer from "./components/Footer";
 function App() {
   return (
     <div>
@@ -18,10 +19,8 @@ function App() {
           <Route path="/YourLiquidity" element={<YourLiquidity />} />
           <Route path="/AddLiquidity" element={<AddLiquidity />} />
         </Routes>
-        <div>
-          {/* A <Switch> looks through its children <Route>s and
-            renders the first one that matches the current URL. */}
-        </div>
+
+        <Footer />
       </Router>
     </div>
   );
