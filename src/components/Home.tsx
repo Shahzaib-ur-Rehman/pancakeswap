@@ -7,6 +7,7 @@ import Trade from "./Trade";
 import TrustedUsers from "./TrustedUsers";
 import WinPrices from "./WinPrices";
 import EarnPassiveEncome from "./EarnPassiveEncome";
+import Header from "./Header";
 export default function Home() {
   return (
     <div>

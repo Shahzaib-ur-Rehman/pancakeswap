@@ -7,6 +7,7 @@ import CakeImage from "../content/images/cake.png";
 const BodyWrapper = styled.div``;
 
 const BannerWrapper = styled.div`
+  margin-top: 70px;
   padding-top: 40px;
   background: linear-gradient(
     139.73deg,
