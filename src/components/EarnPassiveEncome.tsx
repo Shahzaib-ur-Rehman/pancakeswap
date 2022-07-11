@@ -9,22 +9,43 @@ import circle from "../content/images/circle.webp";
 import useMediaQuery from "@mui/material/useMediaQuery";
 const Heading2 = styled.h2`
   font-size: 22px;
+  @media(min-width: 768px){
+    font-size: 30px;
+  }
+  @media(min-width: 992px){
+    font-size: 40px;
+    font-weight: 600;
+    line-height: 1.1;
+    margin-bottom: 24px;
+  } 
 `;
 
 const Description = styled.p`
-  font-size: 18px;
-  font-weight: 600;
+color: rgb(122, 110, 170);
+font-weight: 400;
+line-height: 1.5;
+margin-bottom: 24px;
+font-size: 14px;
+  @media(min-width: 576px){
+    
+    font-size: 16px;
+  }
+  @media(min-width: 1400px){
+    
+    font-size: 18px;
+  }
 `;
 
 const ContentWrapper = styled.div`
   color: rgb(40, 13, 95);
-  text-align: center;
+  text-align: left;
+  padding: 0 15px;
   @media (min-width: 576px) {
-    padding: 10px 0px;
+    padding: 0 15px;
   }
   @media (min-width: 768px) {
     font-size: 40px;
-    padding: 130px 110px;
+    padding: 15px;
   }
   @media (min-width: 1400px) {
     padding: 130px 110px;
@@ -32,6 +53,9 @@ const ContentWrapper = styled.div`
 `;
 const Wrapper = styled.div`
   position: relative;
+  @media(min-width: 992px){
+    text-align: center;
+  }
   > img {
     @media (max-width: 576px) {
       height: 300px;
@@ -112,31 +136,41 @@ const HeadingWrapSlider = styled.div`
     font-size: 16px;
     @media (min-width: 768px) {
       font-size: 20px;
+      margin-bottom: 30px;
     }
   }
-  @media (min-width: 768px) {
-    margin-bottom: 30px;
+  @media (min-width: 1200px) {
+     padding-left: 125px;
   }
+  @media (min-width: 1600px) {
+    padding-left: 172px;
+ }
 `;
 const SmallCardWrapper = styled.div`
   padding: 0px 0px 30px 0px;
 `;
 const SmallCard = styled.div`
+  @media(min-width: 992px){
   padding-left: 16px;
   border-left: 1px solid rgb(215, 202, 236);
-  > * p {
+  }
+  
+  > p {
     margin-bottom: 4px;
     color: rgb(40, 13, 95);
     font-weight: 600;
     line-height: 1.1;
     font-size: 16px;
   }
-  > * h6 {
+  >  h6 {
     color: rgb(118, 69, 217);
     font-weight: 800;
     line-height: 1.5;
     margin-bottom: 10px;
     font-size: 12px;
+    @media(min-width: 576px){
+      font-size: 16px;
+    }
   }
 `;
 const CardSpanElem = styled.span`
@@ -146,14 +180,22 @@ const CardSpanElem = styled.span`
   font-size: 16px;
   display: block;
 `;
+
+const Section = styled.section`
+  @media(min-width: 576px){
+    padding: 15px;
+  }
+`;
 export default function EarnPassiveEncome() {
   const matches = useMediaQuery("(max-width:576px)");
+  const min_width992 = useMediaQuery("(min-width:992px)");
   return (
     <Box
       component={"section"}
       style={{
         background:
           "linear-gradient(111.68deg, rgb(242, 236, 242) 0%, rgb(232, 242, 246) 100%)",
+          padding: "20px 0"
       }}
     >
       <Grid item lg={10} container style={{ margin: "auto" }}>
@@ -162,10 +204,12 @@ export default function EarnPassiveEncome() {
             <Img src={mail} alt="" />
           </Wrapper>
         </Grid>
-        <Grid lg={6}>
+        <Grid lg={6}  
+        display={min_width992 ? "flex" : ""}
+        alignItems={min_width992 ? "center" : ""}>
           <ContentWrapper>
             <Heading2>
-              <span style={{ color: "rgb(118, 69, 217)", fontSize: "28px" }}>
+              <span style={{ color: "rgb(118, 69, 217)" }}>
                 Earn{" "}
               </span>
               passive income with crypto.
@@ -176,7 +220,11 @@ export default function EarnPassiveEncome() {
           </ContentWrapper>
         </Grid>
 
-        <HeadingWrapSlider>
+        
+      </Grid>
+      
+      <Section>
+      <HeadingWrapSlider>
           <h3>
             Top <span>Syrup Pools</span>
           </h3>
@@ -193,14 +241,15 @@ export default function EarnPassiveEncome() {
             </svg>
           </span>
         </HeadingWrapSlider>
-      </Grid>
       <Grid
         item
         lg={10}
         container
-        style={{ display: "flex", justifyContent: "center", margin: "auto" }}
+        style={{ display: "flex", justifyContent: "flex-start", margin: "auto" , padding: "0 20px" }}
       >
-        <Grid lg={2} md={4} sm={6} xs={12}>
+       
+
+        <Grid lg={2} md={4} sm={6} xs={6}>
           <SmallCardWrapper>
             <SmallCard
               style={{
@@ -214,7 +263,7 @@ export default function EarnPassiveEncome() {
             </SmallCard>
           </SmallCardWrapper>
         </Grid>
-        <Grid lg={2} md={4} sm={6} xs={12}>
+        <Grid lg={2} md={4} sm={6} xs={6}>
           <SmallCardWrapper>
             <SmallCard>
               <h6>Stake Cake</h6>
@@ -223,7 +272,7 @@ export default function EarnPassiveEncome() {
             </SmallCard>
           </SmallCardWrapper>
         </Grid>
-        <Grid lg={2} md={4} sm={6} xs={12}>
+        <Grid lg={2} md={4} sm={6} xs={6}>
           <SmallCardWrapper>
             <SmallCard>
               <h6>Stake Cake</h6>
@@ -232,7 +281,7 @@ export default function EarnPassiveEncome() {
             </SmallCard>
           </SmallCardWrapper>
         </Grid>
-        <Grid lg={2} md={4} sm={6} xs={12}>
+        <Grid lg={2} md={4} sm={6} xs={6}>
           <SmallCardWrapper>
             <SmallCard>
               <h6>Stake Cake</h6>
@@ -241,7 +290,7 @@ export default function EarnPassiveEncome() {
             </SmallCard>
           </SmallCardWrapper>
         </Grid>
-        <Grid lg={2} md={4} sm={6} xs={12}>
+        <Grid lg={2} md={4} sm={6} xs={6}>
           <SmallCardWrapper>
             <SmallCard>
               <h6>Stake Cake</h6>
@@ -250,7 +299,9 @@ export default function EarnPassiveEncome() {
             </SmallCard>
           </SmallCardWrapper>
         </Grid>
+       
       </Grid>
+      </Section>
     </Box>
   );
 }

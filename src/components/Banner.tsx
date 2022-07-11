@@ -7,7 +7,6 @@ import CakeImage from "../content/images/cake.png";
 const BodyWrapper = styled.div``;
 
 const BannerWrapper = styled.div`
-  margin-top: 70px;
   padding-top: 40px;
   background: linear-gradient(
     139.73deg,
@@ -25,8 +24,11 @@ const BannerWrapper = styled.div`
   @media (min-width: 992px) {
     padding-top: 60px;
   }
+  @media (min-width: 1200px) {
+    padding-top: 100px;
+  }
   @media (min-width: 1400px) {
-    padding-top: 80px;
+    padding-top: 150px;
   }
 `;
 
@@ -67,6 +69,12 @@ const SliderHeading4 = styled.h4`
 const SliderHeading2 = styled.h2`
   font-weight: 600;
   color: rgb(255, 255, 255);
+  font-size: 16px;
+  margin-bottom: 10px;
+  @media(min-width: 992px){
+    font-size: 40px;
+  }
+
 `;
 
 const StyledButton = styled.button`
@@ -138,9 +146,12 @@ const CurvedImage = styled.div`
   position: absolute;
   width: 100%;
   height: 100%;
-  top: 60%;
+  top: 92%;
   bottom: 0px;
   left: 0px;
+  @media (min-width: 768px) {
+    top: 65%;
+  }
 `;
 const CakeImageComponent = styled.img`
    width: 300px;
@@ -155,7 +166,7 @@ export default function Banner() {
     <BodyWrapper>
       <BannerWrapper>
         <SliderSection className="sliderSection">
-          <Box className="container">
+          <Box style={{ maxWidth: "1080px" , margin: "auto" }} className="container">
             <Slider className="slider">
               <SliderHeading4>Perpetual Futures</SliderHeading4>
               <SliderHeading2>UP TO 100X LEVERAGE</SliderHeading2>
@@ -197,14 +208,21 @@ export default function Banner() {
                   </StyledButtonOutline>
                 </MoonBtnWrapper>
               </Grid>
-              <div className="col-md-6">
+              <Grid lg={6}
+                md={6}
+                sm={12}
+                xs={12}
+                style={{
+                  display: "flex",
+                  justifyContent: "center",
+                }}>
                 <CakeImageComponent
                   src={CakeImage}
                   height="561"
                   width="445"
                   alt="cake"
                 />
-              </div>
+             </Grid>
             </Grid>
           </Box>
         </MoonSection>

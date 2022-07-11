@@ -3,7 +3,7 @@ import Grid from "@mui/material/Grid";
 import styled from "styled-components";
 
 const WinPricesSection = styled.section`
-  padding: 2rem 0;
+  padding: 48px 0;
   background: linear-gradient(rgb(111, 182, 241) 0%, rgb(234, 242, 246) 100%);
   @media (min-width: 768px) {
     padding: 3rem 0;
@@ -20,9 +20,10 @@ const ContainerDiv = styled.div`
   backdrop-filter: blur(12px);
   border-radius: 72px;
   padding: 2.5rem 15px;
-  margin: 100px;
-  @media (max-width: 576px) {
-    margin: 0;
+  margin: 0 15px;
+  @media (min-width: 576px) {
+    
+    margin: 100px;
   }
 `;
 const HeadingDiv = styled.div`
@@ -31,11 +32,12 @@ const HeadingDiv = styled.div`
     color: rgb(40, 13, 95);
     font-weight: 600;
     line-height: 1.5;
-    margin-bottom: 24px;
+    margin-bottom: 10px;
     text-align: center;
     font-size: 20px;
     @media (min-width: 768px) {
       font-size: 30px;
+      margin-bottom: 24px;
     }
     @media (min-width: 992px) {
       font-size: 40px;
@@ -50,11 +52,13 @@ const HeadingDiv = styled.div`
 const DescriptionDiv = styled.div`
   max-width: 240px;
   margin: 0 auto;
+  text-align: center;
   > p {
     color: rgb(122, 110, 170);
     font-weight: 400;
     line-height: 1.5;
     font-size: 14px;
+    margin-bottom: 15px;
     @media (min-width: 768px) {
       font-size: 16px;
     }
@@ -90,18 +94,22 @@ const CardDiv1 = styled.div`
     rgb(255, 205, 81) 51.17%,
     rgb(255, 231, 106) 100%
   );
-  > small,
+  > * small,
   p {
     color: rgb(40, 13, 95);
     font-weight: 400;
     line-height: 1.5;
-    /* margin-bottom: 40px; */
+    margin: 25px 0;  
     font-size: 14px;
   }
-  > h2 {
+  > * h2 {
     color: rgb(40, 13, 95);
     font-size: larger;
     font-weight: 600;
+    font-size: 40px;
+    font-weight: 600;
+    line-height: 1.1;
+
   }
   @media (min-width: 768px) {
     transform: rotate(-2.36deg);
@@ -132,11 +140,14 @@ const CardDiv2 = styled.div`
     line-height: 1.5;
     /* margin-bottom: 40px; */
     font-size: 14px;
+    margin: 25px 0;
   }
   > * h2 {
     color: yellow;
-    font-size: larger;
     font-weight: 600;
+    line-height: 1.5;
+    font-size: 40px;
+    
   }
   > * svg {
     fill: #fff;
