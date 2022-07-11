@@ -146,7 +146,7 @@ export default function AddLiquidity() {
   return (
     <Box
       component={"section"}
-      style={{ padding: "50px", backgroundColor: "#e8faff" }}
+      style={{ padding: "100px", backgroundColor: "#e8faff" }}
     >
       <Grid item lg={10} container style={{ margin: "auto" }}>
         <ModalDialog>
