@@ -99,6 +99,8 @@ const StyledButtonOutline = styled(StyledButton)`
   color: rgb(31, 199, 212);
 `;
 const MoonSection = styled.section`
+  margin-top:20px;
+  padding: 0 15px;
   @media (min-width: 1400px) {
     padding-top: 50px;
   }
@@ -124,7 +126,10 @@ const MoonSectionDiscription = styled.p`
     font-size: 20px;
   }
 `;
-const MoonBtnWrapper = styled.div``;
+const MoonBtnWrapper = styled.div`
+ display: flex;
+ gap: 0 4px;
+`;
 
 const CurvedImage = styled.div`
   z-index: -1;
@@ -137,6 +142,8 @@ const CurvedImage = styled.div`
   left: 0px;
 `;
 const CakeImageComponent = styled.img`
+   width: 300px;
+   margin: 10px auto 0 auto;
   @media (min-width: 992px) {
     height: "488px";
     width: "350px";
@@ -189,7 +196,7 @@ export default function Banner() {
                   </StyledButtonOutline>
                 </MoonBtnWrapper>
               </Grid>
-              <div className="col-md-6 text-lg-center">
+              <div className="col-md-6">
                 <CakeImageComponent
                   src={CakeImage}
                   height="561"
